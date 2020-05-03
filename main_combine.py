@@ -17,11 +17,11 @@ currtime = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
 ## train segmentation CNN for MRI & CT
 ## One modality is treated as source, the other modality is treated as target. Order doesn't matter
 
-source_train_fid = "/data/projects/multimodal_learning/data/tftrain/mr_train_list"
-source_val_fid = "/data/projects/multimodal_learning/data/tftrain/mr_val_list"
+source_train_fid = "/data/multimodal_learning/data/mr_train_list"
+source_val_fid = "/data/multimodal_learning/data/mr_val_list"
 
-target_train_fid = "/data/projects/multimodal_learning/data/tftrain/ct_train_list"
-target_val_fid = "/data/projects/multimodal_learning/data/tftrain/ct_val_list"
+target_train_fid = "/data/multimodal_learning/data/ct_train_list"
+target_val_fid = "/data/multimodal_learning/data/ct_val_list"
 
 cost_kwargs = {
     "miu_seg_dice": 1.0,
@@ -50,7 +50,7 @@ opt_kwargs = {
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-base_path = "/data/projects/multimodal_learning/exp_results/"
+base_path = "/data/multimodal_learning/exp_results/"
 output_path = base_path + opt_kwargs["prefix"]
 
 
